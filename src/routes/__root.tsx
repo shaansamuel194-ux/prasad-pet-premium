@@ -79,16 +79,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "30+ years of compassionate veterinary excellence in Doddanekundi, Bengaluru. Consultation, surgery, vaccinations, grooming, emergency care for every pet.",
+          "30+ years of compassionate veterinary care in Doddanekundi, Bengaluru. Book consultation, surgery, vaccinations, grooming, and emergency treatment for every pet.",
       },
       { name: "author", content: "Dr Prasad's Pet Clinic" },
-      { property: "og:title", content: "Dr Prasad's Pet Clinic — Trusted Veterinary Care" },
+      { property: "og:title", content: "Dr Prasad's Pet Clinic — Trusted Veterinary Care in Bengaluru" },
       {
         property: "og:description",
-        content: "Compassionate, expert veterinary care for every pet. Bengaluru's trusted clinic for 30+ years.",
+        content: "30+ years of compassionate veterinary care in Doddanekundi, Bengaluru. Book consultation, surgery, vaccinations, grooming, and emergency treatment for every pet.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Dr Prasad's Pet Clinic — Trusted Veterinary Care in Bengaluru" },
+      { name: "twitter:description", content: "30+ years of compassionate veterinary care in Doddanekundi, Bengaluru. Book consultation, surgery, vaccinations, grooming, and emergency treatment for every pet." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c7043e95-d47e-4666-83ba-ccba203bc670/id-preview-f0db1af8--f563b725-3df3-448b-abfe-4e4476c1694c.lovable.app-1783762299221.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c7043e95-d47e-4666-83ba-ccba203bc670/id-preview-f0db1af8--f563b725-3df3-448b-abfe-4e4476c1694c.lovable.app-1783762299221.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

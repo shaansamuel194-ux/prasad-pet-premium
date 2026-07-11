@@ -53,10 +53,10 @@ export const Route = createFileRoute("/")({
         content:
           "30+ years of compassionate veterinary care in Doddanekundi, Bengaluru. Book consultation, surgery, vaccinations, grooming, and emergency treatment for every pet.",
       },
-      { property: "og:title", content: "Dr Prasad's Pet Clinic — Trusted Veterinary Care" },
+      { property: "og:title", content: "Dr Prasad's Pet Clinic — Trusted Veterinary Care in Bengaluru" },
       {
         property: "og:description",
-        content: "Compassionate, expert veterinary care for every pet. Bengaluru's trusted clinic for 30+ years.",
+        content: "30+ years of compassionate veterinary care in Doddanekundi, Bengaluru. Book consultation, surgery, vaccinations, grooming, and emergency treatment for every pet.",
       },
     ],
   }),
