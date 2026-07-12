@@ -35,14 +35,22 @@ import {
   Send,
 } from "lucide-react";
 
-import heroVet from "@/assets/hero-vet.jpg";
-import petCat from "@/assets/pet-cat.jpg";
-import petDog from "@/assets/pet-dog.jpg";
-import petBird from "@/assets/pet-bird.jpg";
-import clinicInterior from "@/assets/clinic-interior.jpg";
-import galleryTreatment from "@/assets/gallery-treatment.jpg";
-import galleryHappy from "@/assets/gallery-happy.jpg";
-import galleryGrooming from "@/assets/gallery-grooming.jpg";
+import heroVetAsset from "@/assets/dr-prasad.jpg.asset.json";
+import petCatAsset from "@/assets/tabby-cat.jpg.asset.json";
+import petDogAsset from "@/assets/golden-happy.jpg.asset.json";
+import petBirdAsset from "@/assets/dog-profile.jpg.asset.json";
+import clinicInteriorAsset from "@/assets/clinic-sign.jpg.asset.json";
+import galleryTreatmentAsset from "@/assets/black-puppy.jpg.asset.json";
+import galleryHappyAsset from "@/assets/yellow-lab.jpg.asset.json";
+import galleryGroomingAsset from "@/assets/shihtzu.jpg.asset.json";
+const heroVet = heroVetAsset.url;
+const petCat = petCatAsset.url;
+const petDog = petDogAsset.url;
+const petBird = petBirdAsset.url;
+const clinicInterior = clinicInteriorAsset.url;
+const galleryTreatment = galleryTreatmentAsset.url;
+const galleryHappy = galleryHappyAsset.url;
+const galleryGrooming = galleryGroomingAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -827,7 +835,7 @@ function AboutDoctor() {
         <motion.div style={{ y }} className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] shadow-[var(--shadow-soft)]">
             <img
-              src={galleryTreatment}
+              src={heroVet}
               alt="Dr Prasad examining a puppy"
               width={1000}
               height={1200}
