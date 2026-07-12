@@ -33,22 +33,15 @@ import {
   Send,
 } from "lucide-react";
 
-import heroVetAsset from "@/assets/dr-prasad.jpg.asset.json";
-import petCatAsset from "@/assets/tabby-cat.jpg.asset.json";
-import petDogAsset from "@/assets/golden-happy.jpg.asset.json";
-import petBirdAsset from "@/assets/dog-profile.jpg.asset.json";
-import clinicInteriorAsset from "@/assets/clinic-sign.jpg.asset.json";
-import galleryTreatmentAsset from "@/assets/black-puppy.jpg.asset.json";
-import galleryHappyAsset from "@/assets/yellow-lab.jpg.asset.json";
-import galleryGroomingAsset from "@/assets/shihtzu.jpg.asset.json";
-const heroVet = heroVetAsset.url;
-const petCat = petCatAsset.url;
-const petDog = petDogAsset.url;
-const petBird = petBirdAsset.url;
-const clinicInterior = clinicInteriorAsset.url;
-const galleryTreatment = galleryTreatmentAsset.url;
-const galleryHappy = galleryHappyAsset.url;
-const galleryGrooming = galleryGroomingAsset.url;
+const heroVet = "/hero.jpg";
+const petCat = "/cat.jpg";
+const petDog = "/happy.jpg";
+const petBird = "/cookie.jpg";
+const clinicInterior = "/owner.jpg";
+const galleryTreatment = "/cute.jpg";
+const galleryHappy = "/labor.jpg";
+const galleryGrooming = "/sleepy.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
