@@ -919,20 +919,39 @@ function Booking() {
     const data = new FormData(form);
     const get = (key: string) => String(data.get(key) ?? "").trim();
 
-    const lines = ["🐾 *New Appointment Request*", ""];
+    const ownerName = get("ownerName");
+    const phone = get("phone");
+    const petName = get("petName");
+    const petType = get("petType");
+    const breed = get("breed");
+    const petAge = get("petAge");
+    const date = get("date");
+    const time = get("time");
+    const service = get("service");
+    const notes = get("notes");
+    const email = get("email");
+
+    const lines: string[] = [
+      "Hello Doctor,",
+      "",
+      "I would like to book an appointment.",
+      "",
+    ];
     const add = (label: string, value: string) => {
-      if (value) lines.push(`*${label}:* ${value}`);
+      if (value) lines.push(`${label}: ${value}`);
     };
-    add("Pet Name", get("petName"));
-    add("Owner", get("ownerName"));
-    add("Phone", get("phone"));
-    add("Email", get("email"));
-    add("Pet Type", get("petType"));
-    add("Breed", get("breed"));
-    add("Service", get("service"));
-    add("Preferred Date", get("date"));
-    add("Preferred Time", get("time"));
-    add("Notes", get("notes"));
+    add("Owner Name", ownerName);
+    add("Phone Number", phone);
+    add("Email", email);
+    add("Pet Name", petName);
+    add("Pet Type", petType);
+    add("Breed", breed);
+    add("Pet Age", petAge);
+    add("Preferred Date", date);
+    add("Preferred Time", time);
+    add("Reason for Visit", service || notes);
+    if (service && notes) add("Additional Notes", notes);
+    lines.push("", "Thank you.");
 
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`,
