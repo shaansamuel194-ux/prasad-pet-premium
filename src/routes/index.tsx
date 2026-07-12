@@ -898,13 +898,39 @@ function AboutDoctor() {
   );
 }
 
+const WHATSAPP_NUMBER = "919133936055";
+
 function Booking() {
   const [submitted, setSubmitted] = useState(false);
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const get = (key: string) => String(data.get(key) ?? "").trim();
+
+    const lines = ["🐾 *New Appointment Request*", ""];
+    const add = (label: string, value: string) => {
+      if (value) lines.push(`*${label}:* ${value}`);
+    };
+    add("Pet Name", get("petName"));
+    add("Owner", get("ownerName"));
+    add("Phone", get("phone"));
+    add("Email", get("email"));
+    add("Pet Type", get("petType"));
+    add("Breed", get("breed"));
+    add("Service", get("service"));
+    add("Preferred Date", get("date"));
+    add("Preferred Time", get("time"));
+    add("Notes", get("notes"));
+
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`,
+      "_blank",
+    );
+
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3800);
-    (e.currentTarget as HTMLFormElement).reset();
+    form.reset();
   };
   const field =
     "w-full rounded-2xl border border-border/70 bg-card/70 px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-all focus:border-primary/60 focus:ring-4 focus:ring-primary/10";
@@ -946,11 +972,11 @@ function Booking() {
             </div>
 
             <form onSubmit={onSubmit} className="grid gap-3 md:col-span-3 md:grid-cols-2">
-              <input required placeholder="Pet name" className={field} />
-              <input required placeholder="Owner name" className={field} />
-              <input required type="tel" placeholder="Phone number" className={field} />
-              <input type="email" placeholder="Email address" className={field} />
-              <select required defaultValue="" className={field}>
+              <input required name="petName" placeholder="Pet name" className={field} />
+              <input required name="ownerName" placeholder="Owner name" className={field} />
+              <input required name="phone" type="tel" placeholder="Phone number" className={field} />
+              <input name="email" type="email" placeholder="Email address" className={field} />
+              <select required name="petType" defaultValue="" className={field}>
                 <option value="" disabled>
                   Pet type
                 </option>
@@ -962,8 +988,8 @@ function Booking() {
                 <option>Sheep</option>
                 <option>Other</option>
               </select>
-              <input placeholder="Breed" className={field} />
-              <select required defaultValue="" className={field}>
+              <input name="breed" placeholder="Breed" className={field} />
+              <select required name="service" defaultValue="" className={field}>
                 <option value="" disabled>
                   Service
                 </option>
@@ -971,9 +997,10 @@ function Booking() {
                   <option key={s.title}>{s.title}</option>
                 ))}
               </select>
-              <input type="date" className={field} />
-              <input type="time" className={`${field} md:col-span-2`} />
+              <input name="date" type="date" className={field} />
+              <input name="time" type="time" className={`${field} md:col-span-2`} />
               <textarea
+                name="notes"
                 rows={3}
                 placeholder="Anything we should know?"
                 className={`${field} md:col-span-2`}
@@ -1003,8 +1030,8 @@ function Booking() {
               <Check className="h-5 w-5" strokeWidth={3} />
             </span>
             <div>
-              <p className="text-sm font-medium">Appointment received</p>
-              <p className="text-xs text-muted-foreground">We'll call you shortly to confirm.</p>
+              <p className="text-sm font-medium">Opening WhatsApp…</p>
+              <p className="text-xs text-muted-foreground">Press send to confirm your appointment.</p>
             </div>
           </motion.div>
         )}
