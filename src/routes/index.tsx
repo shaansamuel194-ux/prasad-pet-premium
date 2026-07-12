@@ -309,7 +309,7 @@ function LoadingScreen() {
             className="flex flex-col items-center gap-4"
           >
             <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <Heart className="h-7 w-7" />
+              <PawIcon className="h-7 w-7" />
               <span className="absolute inset-0 animate-pulse-ring rounded-full" />
             </div>
             <p className="font-display text-2xl tracking-wide text-charcoal">Dr Prasad's Pet Clinic</p>
