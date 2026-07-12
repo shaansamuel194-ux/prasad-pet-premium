@@ -357,7 +357,7 @@ function Navbar() {
         >
           <a href="#home" className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <Heart className="h-4 w-4" />
+              <PawIcon className="h-4 w-4" />
             </span>
             <span className="font-display text-lg leading-none text-charcoal">
               Dr Prasad's
