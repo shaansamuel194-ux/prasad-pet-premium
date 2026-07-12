@@ -1019,6 +1019,7 @@ function Booking() {
                 <option>Other</option>
               </select>
               <input name="breed" placeholder="Breed" className={field} />
+              <input name="petAge" placeholder="Pet age (e.g. 2 years)" className={field} />
               <select required name="service" defaultValue="" className={field}>
                 <option value="" disabled>
                   Service
