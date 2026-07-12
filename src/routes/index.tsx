@@ -835,7 +835,7 @@ function AboutDoctor() {
         <motion.div style={{ y }} className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] shadow-[var(--shadow-soft)]">
             <img
-              src={galleryTreatment}
+              src={heroVet}
               alt="Dr Prasad examining a puppy"
               width={1000}
               height={1200}
