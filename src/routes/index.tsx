@@ -36,7 +36,7 @@ import {
 const heroVet = "/hero.jpg";
 const petCat = "/cat.jpg";
 const petDog = "/happy.jpg";
-const petBird = "/cookie.jpg";
+const petBird = "/fine.webp";
 const clinicInterior = "/owner.jpg";
 const galleryTreatment = "/cute.jpg";
 const galleryHappy = "/labor.jpg";
