@@ -1379,15 +1379,15 @@ function Footer() {
               <li>Open daily · till 9 PM</li>
             </ul>
             <div className="mt-6 flex gap-2">
-              {[Instagram, Facebook, MessageCircle].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/15 text-cream/80 transition-colors hover:bg-cream/10"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              <a
+                href="https://wa.me/919133936055"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Chat on WhatsApp"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/15 text-cream/80 transition-colors hover:bg-cream/10"
+              >
+                <MessageCircle className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
