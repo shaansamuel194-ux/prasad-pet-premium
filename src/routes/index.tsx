@@ -95,12 +95,12 @@ const SERVICES = [
 ];
 
 const SPECIES = [
-  { icon: Dog, label: "Dog Care" },
-  { icon: Cat, label: "Cat Care" },
-  { icon: Bird, label: "Bird Care" },
-  { icon: Heart, label: "Cow Care" },
-  { icon: Heart, label: "Goat Care" },
-  { icon: Heart, label: "Sheep Care" },
+  { icon: Dog, label: "Dog Care", href: "https://www.aspca.org/pet-care/dog-care" },
+  { icon: Cat, label: "Cat Care", href: "https://www.aspca.org/pet-care/cat-care" },
+  { icon: Bird, label: "Bird Care", href: "https://www.rspca.org.uk/adviceandwelfare/pets/birds" },
+  { icon: Heart, label: "Cow Care", href: "https://www.rspca.org.uk/adviceandwelfare/farm/cattle" },
+  { icon: Heart, label: "Goat Care", href: "https://www.rspca.org.uk/adviceandwelfare/farm/goats" },
+  { icon: Heart, label: "Sheep Care", href: "https://www.rspca.org.uk/adviceandwelfare/farm/sheep" },
 ];
 
 const FEATURES = [
