@@ -810,13 +810,16 @@ function Services() {
           {SPECIES.map((sp) => {
             const Icon = sp.icon;
             return (
-              <div
+              <a
                 key={sp.label}
+                href={sp.href}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-5 py-2.5 text-sm backdrop-blur transition-transform hover:-translate-y-0.5"
               >
                 <Icon className="h-4 w-4 text-primary" />
                 {sp.label}
-              </div>
+              </a>
             );
           })}
         </div>
