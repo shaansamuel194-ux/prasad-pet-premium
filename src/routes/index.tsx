@@ -30,8 +30,6 @@ import {
   X,
   Check,
   ChevronDown,
-  Instagram,
-  Facebook,
   Send,
 } from "lucide-react";
 
