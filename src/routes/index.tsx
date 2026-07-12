@@ -30,8 +30,6 @@ import {
   X,
   Check,
   ChevronDown,
-  Instagram,
-  Facebook,
   Send,
 } from "lucide-react";
 
@@ -95,12 +93,12 @@ const SERVICES = [
 ];
 
 const SPECIES = [
-  { icon: Dog, label: "Dog Care" },
-  { icon: Cat, label: "Cat Care" },
-  { icon: Bird, label: "Bird Care" },
-  { icon: Heart, label: "Cow Care" },
-  { icon: Heart, label: "Goat Care" },
-  { icon: Heart, label: "Sheep Care" },
+  { icon: Dog, label: "Dog Care", href: "https://www.aspca.org/pet-care/dog-care" },
+  { icon: Cat, label: "Cat Care", href: "https://www.aspca.org/pet-care/cat-care" },
+  { icon: Bird, label: "Bird Care", href: "https://www.rspca.org.uk/adviceandwelfare/pets/birds" },
+  { icon: Heart, label: "Cow Care", href: "https://www.rspca.org.uk/adviceandwelfare/farm/cattle" },
+  { icon: Heart, label: "Goat Care", href: "https://www.rspca.org.uk/adviceandwelfare/farm/goats" },
+  { icon: Heart, label: "Sheep Care", href: "https://www.rspca.org.uk/adviceandwelfare/farm/sheep" },
 ];
 
 const FEATURES = [
@@ -309,7 +307,7 @@ function LoadingScreen() {
             className="flex flex-col items-center gap-4"
           >
             <div className="relative flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <Heart className="h-7 w-7" />
+              <PawIcon className="h-7 w-7" />
               <span className="absolute inset-0 animate-pulse-ring rounded-full" />
             </div>
             <p className="font-display text-2xl tracking-wide text-charcoal">Dr Prasad's Pet Clinic</p>
@@ -357,7 +355,7 @@ function Navbar() {
         >
           <a href="#home" className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <Heart className="h-4 w-4" />
+              <PawIcon className="h-4 w-4" />
             </span>
             <span className="font-display text-lg leading-none text-charcoal">
               Dr Prasad's
@@ -810,13 +808,16 @@ function Services() {
           {SPECIES.map((sp) => {
             const Icon = sp.icon;
             return (
-              <div
+              <a
                 key={sp.label}
+                href={sp.href}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-card/70 px-5 py-2.5 text-sm backdrop-blur transition-transform hover:-translate-y-0.5"
               >
                 <Icon className="h-4 w-4 text-primary" />
                 {sp.label}
-              </div>
+              </a>
             );
           })}
         </div>
@@ -916,20 +917,39 @@ function Booking() {
     const data = new FormData(form);
     const get = (key: string) => String(data.get(key) ?? "").trim();
 
-    const lines = ["🐾 *New Appointment Request*", ""];
+    const ownerName = get("ownerName");
+    const phone = get("phone");
+    const petName = get("petName");
+    const petType = get("petType");
+    const breed = get("breed");
+    const petAge = get("petAge");
+    const date = get("date");
+    const time = get("time");
+    const service = get("service");
+    const notes = get("notes");
+    const email = get("email");
+
+    const lines: string[] = [
+      "Hello Doctor,",
+      "",
+      "I would like to book an appointment.",
+      "",
+    ];
     const add = (label: string, value: string) => {
-      if (value) lines.push(`*${label}:* ${value}`);
+      if (value) lines.push(`${label}: ${value}`);
     };
-    add("Pet Name", get("petName"));
-    add("Owner", get("ownerName"));
-    add("Phone", get("phone"));
-    add("Email", get("email"));
-    add("Pet Type", get("petType"));
-    add("Breed", get("breed"));
-    add("Service", get("service"));
-    add("Preferred Date", get("date"));
-    add("Preferred Time", get("time"));
-    add("Notes", get("notes"));
+    add("Owner Name", ownerName);
+    add("Phone Number", phone);
+    add("Email", email);
+    add("Pet Name", petName);
+    add("Pet Type", petType);
+    add("Breed", breed);
+    add("Pet Age", petAge);
+    add("Preferred Date", date);
+    add("Preferred Time", time);
+    add("Reason for Visit", service || notes);
+    if (service && notes) add("Additional Notes", notes);
+    lines.push("", "Thank you.");
 
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`,
@@ -997,6 +1017,7 @@ function Booking() {
                 <option>Other</option>
               </select>
               <input name="breed" placeholder="Breed" className={field} />
+              <input name="petAge" placeholder="Pet age (e.g. 2 years)" className={field} />
               <select required name="service" defaultValue="" className={field}>
                 <option value="" disabled>
                   Service
@@ -1314,7 +1335,7 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-charcoal">
-                <Heart className="h-4 w-4" />
+                <PawIcon className="h-4 w-4" />
               </span>
               <span className="font-display text-2xl">Dr Prasad's Pet Clinic</span>
             </div>
@@ -1356,15 +1377,15 @@ function Footer() {
               <li>Open daily · till 9 PM</li>
             </ul>
             <div className="mt-6 flex gap-2">
-              {[Instagram, Facebook, MessageCircle].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/15 text-cream/80 transition-colors hover:bg-cream/10"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+              <a
+                href="https://wa.me/919133936055"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Chat on WhatsApp"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/15 text-cream/80 transition-colors hover:bg-cream/10"
+              >
+                <MessageCircle className="h-4 w-4" />
+              </a>
             </div>
           </div>
         </div>
