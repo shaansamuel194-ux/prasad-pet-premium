@@ -1337,7 +1337,7 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-charcoal">
-                <Heart className="h-4 w-4" />
+                <PawIcon className="h-4 w-4" />
               </span>
               <span className="font-display text-2xl">Dr Prasad's Pet Clinic</span>
             </div>
