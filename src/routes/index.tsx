@@ -350,16 +350,13 @@ function Navbar() {
           ].join(" ")}
         >
           <a href="#home" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground">
-              <PawIcon className="h-4 w-4" />
-            </span>
-            <span className="font-display text-lg leading-none text-charcoal">
-              Dr Prasad's
-              <span className="ml-1 text-xs font-sans font-medium tracking-widest text-muted-foreground uppercase">
-                Pet Clinic
-              </span>
-            </span>
+            <img
+              src={clinicLogo.url}
+              alt="Dr Prasad's Pet Clinic"
+              className="h-11 w-auto md:h-14 lg:h-16 object-contain"
+            />
           </a>
+
           <nav className="hidden items-center gap-8 md:flex">
             {NAV.map((n) => (
               <a
@@ -1330,11 +1327,13 @@ function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-charcoal">
-                <PawIcon className="h-4 w-4" />
-              </span>
-              <span className="font-display text-2xl">Dr Prasad's Pet Clinic</span>
+              <img
+                src={clinicLogo.url}
+                alt="Dr Prasad's Pet Clinic"
+                className="h-14 w-auto object-contain bg-cream rounded-lg p-2"
+              />
             </div>
+
             <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/70">
               Trusted veterinary care for every pet — from puppies and kittens to birds and farm
               animals. Thirty years of compassion, backed by modern medicine.
