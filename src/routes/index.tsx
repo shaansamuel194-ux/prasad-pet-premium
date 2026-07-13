@@ -33,7 +33,7 @@ import {
   Send,
 } from "lucide-react";
 
-import clinicLogo from "@/assets/clinic-logo.png.asset.json";
+const clinicLogoUrl = "/logo.jpeg";
 
 const heroVet = "/hero.jpg";
 const petCat = "/cat.jpg";
@@ -351,9 +351,9 @@ function Navbar() {
         >
           <a href="#home" className="flex items-center gap-2.5">
             <img
-              src={clinicLogo.url}
+              src={clinicLogoUrl}
               alt="Dr Prasad's Pet Clinic"
-              className="h-11 w-auto md:h-14 lg:h-16 object-contain"
+              className="h-[55px] w-auto md:h-[70px] lg:h-[78px] object-contain"
             />
           </a>
 
