@@ -33,7 +33,7 @@ import {
   Send,
 } from "lucide-react";
 
-const clinicLogoUrl = "/logo.jpeg";
+const clinicLogoUrl = "/logo.png";
 
 const heroVet = "/hero.jpg";
 const petCat = "/cat.jpg";
@@ -349,11 +349,11 @@ function Navbar() {
               : "border-transparent bg-card/30 px-5 py-3.5 backdrop-blur-md md:px-8",
           ].join(" ")}
         >
-          <a href="#home" className="flex items-center gap-2.5">
+          <a href="#home" className="flex shrink-0 items-center">
             <img
               src={clinicLogoUrl}
-              alt="Dr Prasad's Pet Clinic"
-              className="h-[55px] w-auto md:h-[70px] lg:h-[78px] object-contain"
+              alt="Dr Prasad's Pet Clinic — Dog, Cat, Cow, Goat, Sheep, Birds"
+              className="w-[160px] sm:w-[190px] md:w-[230px] lg:w-[260px] h-auto object-contain"
             />
           </a>
 
