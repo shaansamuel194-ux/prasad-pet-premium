@@ -33,6 +33,8 @@ import {
   Send,
 } from "lucide-react";
 
+import clinicLogo from "@/assets/clinic-logo.png.asset.json";
+
 const heroVet = "/hero.jpg";
 const petCat = "/cat.jpg";
 const petDog = "/happy.jpg";
@@ -41,6 +43,7 @@ const clinicInterior = "/owner.jpg";
 const galleryTreatment = "/cute.jpg";
 const galleryHappy = "/labor.jpg";
 const galleryGrooming = "/sleepy.jpg";
+
 
 
 export const Route = createFileRoute("/")({
