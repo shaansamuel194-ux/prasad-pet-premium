@@ -1328,7 +1328,7 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
               <img
-                src={clinicLogo.url}
+                src={clinicLogoUrl}
                 alt="Dr Prasad's Pet Clinic"
                 className="h-14 w-auto object-contain bg-cream rounded-lg p-2"
               />
