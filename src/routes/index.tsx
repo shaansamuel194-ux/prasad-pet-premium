@@ -339,14 +339,14 @@ function Navbar() {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 1.4 }}
-        className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-2 md:pt-3"
+        className="fixed inset-x-0 top-0 z-50 flex justify-center px-3 pt-1.5 md:pt-2"
       >
         <div
           className={[
             "flex w-full max-w-6xl items-center justify-between rounded-full border transition-[padding,background-color,border-color,box-shadow,backdrop-filter] duration-300 ease-out",
             scrolled
-              ? "border-border/60 bg-card/75 px-4 py-1.5 shadow-[0_20px_50px_-30px_rgba(60,40,20,0.35)] backdrop-blur-2xl md:px-5"
-              : "border-transparent bg-card/30 px-5 py-2.5 backdrop-blur-md md:px-7",
+              ? "border-border/60 bg-card/75 px-3.5 py-1 shadow-[0_20px_50px_-30px_rgba(60,40,20,0.35)] backdrop-blur-2xl md:px-4"
+              : "border-transparent bg-card/30 px-4 py-2 backdrop-blur-md md:px-6",
           ].join(" ")}
         >
           <a href="#home" className="flex shrink-0 items-center">
@@ -356,18 +356,18 @@ function Navbar() {
               className={[
                 "h-auto object-contain transition-[width] duration-300 ease-out",
                 scrolled
-                  ? "w-[130px] sm:w-[150px] md:w-[170px] lg:w-[190px]"
-                  : "w-[150px] sm:w-[170px] md:w-[190px] lg:w-[215px]",
+                  ? "w-[104px] sm:w-[120px] md:w-[136px] lg:w-[152px]"
+                  : "w-[120px] sm:w-[136px] md:w-[152px] lg:w-[172px]",
               ].join(" ")}
             />
           </a>
 
-          <nav className="hidden items-center gap-7 md:flex">
+          <nav className="hidden items-center gap-6 md:flex">
             {NAV.map((n) => (
               <a
                 key={n.label}
                 href={n.href}
-                className="group relative text-[13px] text-foreground/80 transition-colors hover:text-foreground"
+                className="group relative text-[12px] text-foreground/80 transition-colors hover:text-foreground"
               >
                 {n.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-300 group-hover:w-full" />
@@ -378,8 +378,8 @@ function Navbar() {
             <a
               href="#booking"
               className={[
-                "hidden rounded-full bg-primary text-[13px] font-medium text-primary-foreground shadow-[0_10px_30px_-12px_rgba(60,40,20,0.6)] transition-all duration-300 hover:-translate-y-0.5 md:inline-flex",
-                scrolled ? "px-4 py-1.5" : "px-5 py-2",
+                "hidden rounded-full bg-primary text-[12px] font-medium text-primary-foreground shadow-[0_10px_30px_-12px_rgba(60,40,20,0.6)] transition-all duration-300 hover:-translate-y-0.5 md:inline-flex",
+                scrolled ? "px-3 py-1" : "px-4 py-1.5",
               ].join(" ")}
             >
               Book Appointment
@@ -388,9 +388,9 @@ function Navbar() {
             <button
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className="rounded-full border border-border/60 bg-card/50 p-2.5 md:hidden"
+              className="rounded-full border border-border/60 bg-card/50 p-2 md:hidden"
             >
-              <Menu className="h-5 w-5" />
+              <Menu className="h-[18px] w-[18px]" />
             </button>
           </div>
         </div>
